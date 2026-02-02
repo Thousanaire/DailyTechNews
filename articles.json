@@ -1,14 +1,42 @@
-[
-  {
-    "title": "AI Breakthrough Changes the Industry",
-    "summary": "A new AI model is reshaping how companies approach automation and data analysis.",
-    "url": "https://example.com/ai-news",
-    "source": "TechCrunch"
-  },
-  {
-    "title": "New Smartphone Sets Performance Record",
-    "summary": "The latest flagship device surpasses all benchmarks with its next‑gen processor.",
-    "url": "https://example.com/phone-news",
-    "source": "The Verge"
-  }
-]
+{
+  "Startup & Venture Tech": [
+    {
+      "title": "Placeholder Startup Headline",
+      "summary": "A brief summary of a startup, funding round, or new venture.",
+      "source": "TechCrunch",
+      "url": "https://example.com/startup-article"
+    }
+  ],
+  "Artificial Intelligence & Automation": [
+    {
+      "title": "Placeholder AI Breakthrough",
+      "summary": "A short summary describing a new AI model, automation tool, or research milestone.",
+      "source": "MIT Technology Review",
+      "url": "https://example.com/ai-article"
+    }
+  ],
+  "Gaming & Interactive Tech": [
+    {
+      "title": "Placeholder Gaming Tech Update",
+      "summary": "A summary about VR/AR, esports, AI in gaming, or metaverse developments.",
+      "source": "IGN",
+      "url": "https://example.com/gaming-article"
+    }
+  ],
+  "Consumer Gadgets & New Products": [
+    {
+      "title": "Placeholder Gadget Launch",
+      "summary": "A summary of a new smartphone, wearable, laptop, or smart home device.",
+      "source": "The Verge",
+      "url": "https://example.com/gadget-article"
+    }
+  ],
+  "Cybersecurity & Policy": [
+    {
+      "title": "Placeholder Cybersecurity Update",
+      "summary": "A summary about a data breach, hacking incident, regulation, or digital rights issue.",
+      "source": "Wired",
+      "url": "https://example.com/cyber-article"
+    }
+  ]
+}
