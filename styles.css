@@ -111,13 +111,24 @@ header p {
 
 
 /* ------------------------------
-   CATEGORY TITLES
+   CATEGORY HEADER (NEW)
 ------------------------------ */
 
-.category-title {
+.category-header {
   text-align: center;
-  font-size: 1.8rem;
   margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+.category-header h2 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
   color: #111;
-  font-weight: 700;
+}
+
+.category-header p {
+  font-size: 1rem;
+  color: #444;
+  margin: 0 auto;
+  max-width: 600px;
 }
