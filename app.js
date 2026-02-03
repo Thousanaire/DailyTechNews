@@ -6,11 +6,9 @@ async function loadCategory(categoryName) {
   const container = document.getElementById("articles");
   container.innerHTML = "";
 
-  // Category title
-  const header = document.createElement("h2");
-  header.className = "category-title";
-  header.textContent = categoryName;
-  container.appendChild(header);
+  // IMPORTANT:
+  // Removed the JS-generated category title to prevent duplicates.
+  // The HTML now provides the title + description.
 
   const articles = data[categoryName];
 
@@ -100,5 +98,3 @@ async function loadArticles() {
     });
   }
 }
-
-
