@@ -1,14 +1,10 @@
 // Load ONLY one category (used on category pages)
 async function loadCategory(categoryName) {
-  const res = await fetch("articles.json");
+  const res = await fetch("https://script.google.com/macros/s/AKfycbwOElKb4jLpqNXrY4dSC4JKiOQizApnBxV6hYZWUkR6QlDNFqnwaJY_9gbEAfD2FvEy/exec");
   const data = await res.json();
 
   const container = document.getElementById("articles");
   container.innerHTML = "";
-
-  // IMPORTANT:
-  // Removed the JS-generated category title to prevent duplicates.
-  // The HTML now provides the title + description.
 
   const articles = data[categoryName];
 
@@ -31,19 +27,17 @@ async function loadCategory(categoryName) {
 
 // Load TOP STORIES (homepage)
 async function loadTopStories() {
-  const res = await fetch("articles.json");
+  const res = await fetch("https://script.google.com/macros/s/AKfycbwOElKb4jLpqNXrY4dSC4JKiOQizApnBxV6hYZWUkR6QlDNFqnwaJY_9gbEAfD2FvEy/exec");
   const data = await res.json();
 
   const container = document.getElementById("articles");
   container.innerHTML = "";
 
-  // Top Stories header
   const header = document.createElement("h2");
   header.textContent = "Top Stories";
   header.className = "category-title";
   container.appendChild(header);
 
-  // Loop through each category and take the first article
   for (const categoryName in data) {
     const articles = data[categoryName];
     const topArticle = articles[0];
@@ -69,7 +63,7 @@ async function loadTopStories() {
 
 // Load ALL articles (optional full feed page)
 async function loadArticles() {
-  const res = await fetch("articles.json");
+  const res = await fetch("https://script.google.com/macros/s/AKfycbwOElKb4jLpqNXrY4dSC4JKiOQizApnBxV6hYZWUkR6QlDNFqnwaJY_9gbEAfD2FvEy/exec");
   const data = await res.json();
 
   const container = document.getElementById("articles");
