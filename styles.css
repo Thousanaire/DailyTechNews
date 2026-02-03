@@ -17,7 +17,7 @@ main {
 
 
 /* ------------------------------
-   HEADER
+   MAIN SITE HEADER
 ------------------------------ */
 
 header {
@@ -111,7 +111,7 @@ header p {
 
 
 /* ------------------------------
-   CATEGORY HEADER (NEW)
+   CATEGORY HEADER (ALL TABS)
 ------------------------------ */
 
 .category-header {
@@ -131,4 +131,18 @@ header p {
   color: #444;
   margin: 0 auto;
   max-width: 600px;
+}
+
+
+/* ------------------------------
+   CATEGORY TITLE (HOMEPAGE)
+------------------------------ */
+
+.category-title {
+  text-align: center;       /* FIX: centers "Top Stories" */
+  font-size: 1.8rem;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  color: #111;
+  font-weight: 700;
 }
