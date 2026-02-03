@@ -139,10 +139,19 @@ header p {
 ------------------------------ */
 
 .category-title {
-  text-align: center;       /* FIX: centers "Top Stories" */
+  text-align: center;
   font-size: 1.8rem;
   margin-top: 40px;
   margin-bottom: 20px;
   color: #111;
   font-weight: 700;
+}
+
+
+/* ------------------------------
+   HOMEPAGE FIX — REMOVE LEFT INDENT
+------------------------------ */
+
+main#articles {
+  padding: 0;   /* This finally centers "Top Stories" */
 }
