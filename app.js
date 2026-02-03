@@ -1,7 +1,38 @@
-// Load ONLY one category (used on category pages)
-async function loadCategory(categoryName) {
+// ------------------------------
+// CACHING LAYER (Option A)
+// ------------------------------
+async function getCachedData() {
+  const CACHE_KEY = "newsData";
+  const CACHE_TIME_KEY = "newsDataTime";
+  const CACHE_DURATION = 10 * 60 * 1000; // 10 minutes
+
+  const now = Date.now();
+  const lastFetch = localStorage.getItem(CACHE_TIME_KEY);
+  const cached = localStorage.getItem(CACHE_KEY);
+
+  // If cached data exists AND it's fresh, use it
+  if (cached && lastFetch && (now - lastFetch < CACHE_DURATION)) {
+    return JSON.parse(cached);
+  }
+
+  // Otherwise fetch fresh data
   const res = await fetch("https://script.google.com/macros/s/AKfycbwOElKb4jLpqNXrY4dSC4JKiOQizApnBxV6hYZWUkR6QlDNFqnwaJY_9gbEAfD2FvEy/exec");
   const data = await res.json();
+
+  // Save to cache
+  localStorage.setItem(CACHE_KEY, JSON.stringify(data));
+  localStorage.setItem(CACHE_TIME_KEY, now);
+
+  return data;
+}
+
+
+
+// ------------------------------
+// CATEGORY PAGE
+// ------------------------------
+async function loadCategory(categoryName) {
+  const data = await getCachedData();
 
   const container = document.getElementById("articles");
   container.innerHTML = "";
@@ -25,10 +56,11 @@ async function loadCategory(categoryName) {
 
 
 
-// Load TOP STORIES (homepage)
+// ------------------------------
+// HOMEPAGE (TOP STORIES)
+// ------------------------------
 async function loadTopStories() {
-  const res = await fetch("https://script.google.com/macros/s/AKfycbwOElKb4jLpqNXrY4dSC4JKiOQizApnBxV6hYZWUkR6QlDNFqnwaJY_9gbEAfD2FvEy/exec");
-  const data = await res.json();
+  const data = await getCachedData();
 
   const container = document.getElementById("articles");
   container.innerHTML = "";
@@ -61,10 +93,11 @@ async function loadTopStories() {
 
 
 
-// Load ALL articles (optional full feed page)
+// ------------------------------
+// FULL FEED PAGE
+// ------------------------------
 async function loadArticles() {
-  const res = await fetch("https://script.google.com/macros/s/AKfycbwOElKb4jLpqNXrY4dSC4JKiOQizApnBxV6hYZWUkR6QlDNFqnwaJY_9gbEAfD2FvEy/exec");
-  const data = await res.json();
+  const data = await getCachedData();
 
   const container = document.getElementById("articles");
   container.innerHTML = "";
@@ -92,3 +125,5 @@ async function loadArticles() {
     });
   }
 }
+
+
